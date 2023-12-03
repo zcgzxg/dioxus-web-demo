@@ -1,0 +1,23 @@
+[package]
+name = "dioxus-web-demo"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[features]
+default = []
+ssr = ["axum", "dioxus-fullstack/axum"]
+web = ["dioxus-fullstack/web"]
+
+[dependencies]
+async-recursion = "1.0.5"
+chrono = { version = "0.4.31", features = ["serde"] }
+dioxus-fullstack = { version = "0.4.1", features = ["router"] }
+dioxus = "0.4.0"
+futures = "0.3.29"
+reqwest = { version = "0.11.22", features = ["json"] }
+serde = { version = "1.0.184", features = ["derive"] }
+axum = { version = "0.7.1", optional = true }
+tracing-wasm = "0.2.1"
+tracing-subscriber = { version = "0.3.18", default_features = false }
